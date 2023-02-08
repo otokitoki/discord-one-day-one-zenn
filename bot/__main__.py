@@ -55,9 +55,8 @@ async def on_message(message):
             await message.channel.send(url)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     try:
-
         client.run(os.getenv("TOKEN"))
     except Exception as e:
         discord.client._log.exception("exception : %s", e)
