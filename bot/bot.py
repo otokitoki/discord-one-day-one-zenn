@@ -7,11 +7,13 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
+
 def get_diff_article_urls():
   article_urls = fetch_tech_article()
-  save_urls(article_urls)
   sent_messages = db.keys()
-  return list(set(article_urls) - set(sent_messages))
+  diff_article_urls = list(set(article_urls) - set(sent_messages))
+  save_urls(diff_article_urls)
+  return diff_article_urls
 
 
 def fetch_tech_article():
