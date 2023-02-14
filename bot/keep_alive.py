@@ -11,7 +11,6 @@ def home():
   diff_article_urls = get_diff_article_urls()
   if not diff_article_urls:
     print("empty diff_article_urls")
-    send_message("新規の記事はないよ")
   for url in diff_article_urls:
     print(url)
     send_message(url)
